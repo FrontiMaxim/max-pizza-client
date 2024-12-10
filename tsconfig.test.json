@@ -1,0 +1,8 @@
+{
+    "compilerOptions": {
+       "types": ["vitest/globals"],
+       "esModuleInterop": true
+    },
+    "include": ["vitest.config.ts", "./src/test/setup.ts"],
+}
+  

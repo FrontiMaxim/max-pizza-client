@@ -1,13 +1,14 @@
 import "./App.css";
-import { Button } from "./shared/ui";
+import { Button, TextField } from "./shared/ui";
 import IconUser from "./assets/icons/user.svg?react";
 
 function App() {
   return (
     <>
-      <Button variant="secondary" size="small" endIcon={IconUser} disabled>
+      <Button variant="primary" size="small" endIcon={IconUser}>
         Кнопка
       </Button>
+      <TextField title="Заголовок" placeholder="nernferp" name="name" />
     </>
   );
 }
