@@ -2,8 +2,7 @@ import { FC, ReactNode, SVGProps } from "react";
 import cn from "classnames";
 
 type ButtonProps = {
-  variant?: "contained" | "outlined";
-  color?: "primary" | "default";
+  variant?: "primary" | "secondary" | "default";
   disabled?: boolean;
   size?: "small" | "medium" | "large";
   children: ReactNode;
@@ -14,8 +13,7 @@ type ButtonProps = {
 };
 
 export const Button: FC<ButtonProps> = ({
-  variant = "contained",
-  color = "primary",
+  variant = "primary",
   children,
   onClick,
   startIcon,
@@ -42,14 +40,11 @@ export const Button: FC<ButtonProps> = ({
           ["px-[76px] py-[15px]"]: size === "medium",
           ["px-[18px] py-[11px]"]: size === "small",
           ["bg-primary text-white font-bold"]:
-            variant === "contained" && color === "primary" && !disabled,
-          ["bg-default text-primary"]:
-            variant === "contained" && color === "default" && !disabled,
+            variant === "primary" && !disabled,
+          ["bg-secondary text-primary"]: variant === "secondary" && !disabled,
           ["bg-white text-primary border border-primary"]:
-            variant === "outlined" && color === "primary" && !disabled,
-          ["bg-white text-default border border-default"]:
-            variant === "outlined" && color === "default" && !disabled,
-          ["bg-grey text-white pointer-events-none"]: disabled,
+            variant === "default" && !disabled,
+          ["bg-grey text-white"]: disabled,
         },
         className ?? ""
       )}
@@ -57,8 +52,9 @@ export const Button: FC<ButtonProps> = ({
       {StartIcon ? (
         <StartIcon
           className={cn("mr-[10px]", {
-            ["stroke-white"]: color === "primary" || disabled,
-            ["stroke-primary"]: color === "default" && !disabled,
+            ["stroke-white"]: variant === "primary" || disabled,
+            ["stroke-primary"]:
+              variant === "default" || (variant === "secondary" && !disabled),
           })}
         />
       ) : null}
@@ -66,8 +62,9 @@ export const Button: FC<ButtonProps> = ({
       {EndIcon ? (
         <EndIcon
           className={cn("ml-[10px]", {
-            ["stroke-white"]: color === "primary" || disabled,
-            ["stroke-primary"]: color === "default" && !disabled,
+            ["stroke-white"]: variant === "primary" || disabled,
+            ["stroke-primary"]:
+              variant === "default" || (variant === "secondary" && !disabled),
           })}
         />
       ) : null}

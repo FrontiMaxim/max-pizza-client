@@ -5,12 +5,7 @@ import IconUser from "./assets/icons/user.svg?react";
 function App() {
   return (
     <>
-      <Button
-        color="primary"
-        variant="contained"
-        size="medium"
-        endIcon={IconUser}
-      >
+      <Button variant="secondary" size="small" endIcon={IconUser} disabled>
         Кнопка
       </Button>
     </>
