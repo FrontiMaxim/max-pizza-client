@@ -1,0 +1,19 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`TextField > should input\`s view is default state 1`] = `
+<input
+  class="mt-[5px] h-[48px] border rounded-[10px] pl-[19px] font-[16px] w-full border-grey outline-active"
+  name="name"
+  placeholder="placeholder"
+  type="text"
+/>
+`;
+
+exports[`TextField > should input\`s view is error state 1`] = `
+<input
+  class="mt-[5px] h-[48px] border rounded-[10px] pl-[19px] font-[16px] w-full border-error outline-none"
+  name="name"
+  placeholder="placeholder"
+  type="text"
+/>
+`;

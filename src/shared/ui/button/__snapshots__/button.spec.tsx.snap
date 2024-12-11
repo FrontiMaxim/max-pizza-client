@@ -1,0 +1,34 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Button > should state is disabled  1`] = `
+<button
+  class="font-semibold font-[16px] rounded-[15px] flex items-center transition duration-200 hover:shadow-lg px-[18px] py-[11px] bg-grey text-white"
+  disabled=""
+>
+  button
+</button>
+`;
+
+exports[`Button > should variant is default 1`] = `
+<button
+  class="font-semibold font-[16px] rounded-[15px] flex items-center transition duration-200 hover:shadow-lg px-[18px] py-[11px] bg-white text-primary border border-primary"
+>
+  button
+</button>
+`;
+
+exports[`Button > should variant is primary 1`] = `
+<button
+  class="font-semibold font-[16px] rounded-[15px] flex items-center transition duration-200 hover:shadow-lg px-[18px] py-[11px] bg-primary text-white font-bold"
+>
+  button
+</button>
+`;
+
+exports[`Button > should variant is secondary 1`] = `
+<button
+  class="font-semibold font-[16px] rounded-[15px] flex items-center transition duration-200 hover:shadow-lg px-[18px] py-[11px] bg-secondary text-primary"
+>
+  button
+</button>
+`;

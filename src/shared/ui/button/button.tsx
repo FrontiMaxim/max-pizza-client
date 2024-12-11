@@ -48,6 +48,7 @@ export const Button: FC<ButtonProps> = ({
         },
         className ?? ""
       )}
+      disabled={disabled}
     >
       {StartIcon ? (
         <StartIcon
