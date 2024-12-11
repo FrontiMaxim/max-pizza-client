@@ -2,7 +2,7 @@
 
 exports[`Button > should state is disabled  1`] = `
 <button
-  class="font-semibold font-[16px] rounded-[15px] flex items-center transition duration-200 hover:shadow-lg px-[18px] py-[11px] bg-grey text-white"
+  class="font-semibold rounded-[15px] flex items-center justify-center transition duration-200 hover:shadow-lg px-[18px] py-[11px] bg-grey text-white"
   disabled=""
 >
   button
@@ -11,7 +11,7 @@ exports[`Button > should state is disabled  1`] = `
 
 exports[`Button > should variant is default 1`] = `
 <button
-  class="font-semibold font-[16px] rounded-[15px] flex items-center transition duration-200 hover:shadow-lg px-[18px] py-[11px] bg-white text-primary border border-primary"
+  class="font-semibold rounded-[15px] flex items-center justify-center transition duration-200 hover:shadow-lg px-[18px] py-[11px] bg-white text-primary border border-primary"
 >
   button
 </button>
@@ -19,7 +19,7 @@ exports[`Button > should variant is default 1`] = `
 
 exports[`Button > should variant is primary 1`] = `
 <button
-  class="font-semibold font-[16px] rounded-[15px] flex items-center transition duration-200 hover:shadow-lg px-[18px] py-[11px] bg-primary text-white font-bold"
+  class="font-semibold rounded-[15px] flex items-center justify-center transition duration-200 hover:shadow-lg px-[18px] py-[11px] bg-primary text-white font-bold"
 >
   button
 </button>
@@ -27,7 +27,7 @@ exports[`Button > should variant is primary 1`] = `
 
 exports[`Button > should variant is secondary 1`] = `
 <button
-  class="font-semibold font-[16px] rounded-[15px] flex items-center transition duration-200 hover:shadow-lg px-[18px] py-[11px] bg-secondary text-primary"
+  class="font-semibold rounded-[15px] flex items-center justify-center transition duration-200 hover:shadow-lg px-[18px] py-[11px] bg-secondary text-primary"
 >
   button
 </button>
