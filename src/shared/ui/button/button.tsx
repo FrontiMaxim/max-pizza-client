@@ -29,12 +29,7 @@ export const Button: FC<ButtonProps> = ({
     <button
       onClick={onClick}
       className={cn(
-        "font-semibold",
-        "font-[16px]",
-        "rounded-[15px]",
-        "flex",
-        "items-center",
-        "transition duration-200 hover:shadow-lg",
+        "font-semibold rounded-[15px] flex items-center justify-center transition duration-200 hover:shadow-lg",
         {
           ["px-[101px] py-[18px]"]: size === "large",
           ["px-[76px] py-[15px]"]: size === "medium",

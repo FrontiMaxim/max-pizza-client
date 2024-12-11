@@ -12,6 +12,9 @@ export default {
         'grey': '#CECECE',
         'error': '#FE0000',
         'active': '#0084FE'
+      },
+      boxShadow: {
+        'st': '0 0 5px rgba(0, 0, 0, 0.25)'
       }
     } 
   },
