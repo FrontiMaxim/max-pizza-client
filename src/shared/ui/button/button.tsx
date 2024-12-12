@@ -2,6 +2,7 @@ import { FC, ReactNode, SVGProps } from "react";
 import cn from "classnames";
 
 type ButtonProps = {
+  type?: "button" | "submit";
   variant?: "primary" | "secondary" | "default";
   disabled?: boolean;
   size?: "small" | "medium" | "large";
@@ -13,6 +14,7 @@ type ButtonProps = {
 };
 
 export const Button: FC<ButtonProps> = ({
+  type = "button",
   variant = "primary",
   children,
   onClick,
@@ -27,17 +29,19 @@ export const Button: FC<ButtonProps> = ({
 
   return (
     <button
+      type={type}
       onClick={onClick}
       className={cn(
-        "font-semibold rounded-[15px] flex items-center justify-center transition duration-200 hover:shadow-lg",
+        "font-semibold rounded-[15px] flex items-center justify-center",
         {
           ["px-[101px] py-[18px]"]: size === "large",
           ["px-[76px] py-[15px]"]: size === "medium",
           ["px-[18px] py-[11px]"]: size === "small",
-          ["bg-primary text-white font-bold"]:
+          ["bg-primary text-white font-bold transition duration-200 hover:shadow-lg"]:
             variant === "primary" && !disabled,
-          ["bg-secondary text-primary"]: variant === "secondary" && !disabled,
-          ["bg-white text-primary border border-primary"]:
+          ["bg-secondary text-primary transition duration-200 hover:shadow-lg"]:
+            variant === "secondary" && !disabled,
+          ["bg-white text-primary border border-primary transition duration-200 hover:shadow-lg"]:
             variant === "default" && !disabled,
           ["bg-grey text-white"]: disabled,
         },

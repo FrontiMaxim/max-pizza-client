@@ -6,6 +6,7 @@ exports[`TextField > should input\`s view is default state 1`] = `
   name="name"
   placeholder="placeholder"
   type="text"
+  value=""
 />
 `;
 
@@ -15,5 +16,6 @@ exports[`TextField > should input\`s view is error state 1`] = `
   name="name"
   placeholder="placeholder"
   type="text"
+  value=""
 />
 `;
