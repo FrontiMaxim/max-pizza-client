@@ -1,5 +1,5 @@
-import { FC } from "react";
-import { Button } from "../../shared/ui";
+import { FC, useState } from "react";
+import { Button, Loader } from "../../shared/ui";
 import {
   InputEmail,
   InputFirstName,
@@ -8,9 +8,21 @@ import {
 } from "../../features";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { DataRegistration, SchemaRegistration } from "../../entities/user";
+import {
+  DataRegistration,
+  fetchRegistration,
+  SchemaRegistration,
+} from "../../entities/user";
+import { useNavigate } from "react-router";
 
 export const FormRegistration: FC = () => {
+  const [isPending, setIsPending] = useState(false);
+  const navigate = useNavigate();
+  const [resultRegistration, setResultRegistration] = useState({
+    isSuccess: false,
+    error: "",
+  });
+
   const {
     control,
     handleSubmit,
@@ -26,8 +38,16 @@ export const FormRegistration: FC = () => {
     resolver: zodResolver(SchemaRegistration),
   });
 
-  const onSubmit = (data: DataRegistration) => {
-    console.log(data);
+  const onSubmit = async (data: DataRegistration) => {
+    setIsPending(true);
+    const result = await fetchRegistration(data);
+    setIsPending(false);
+
+    if (result.isSuccess) {
+      navigate("../success");
+    } else {
+      setResultRegistration({ ...result });
+    }
   };
 
   return (
@@ -56,11 +76,17 @@ export const FormRegistration: FC = () => {
           className="w-full"
           size="medium"
           type="submit"
-          disabled={!isValid}
+          disabled={!isValid || isPending}
         >
-          Зарегистрироваться
+          {isPending ? <Loader color="default" /> : "Зарегистрироваться"}
         </Button>
       </div>
+
+      {!resultRegistration.isSuccess && (
+        <div className="mt-5 text-error text-center">
+          {resultRegistration.error}
+        </div>
+      )}
     </form>
   );
 };
