@@ -13,11 +13,15 @@ import {
   fetchRegistration,
   SchemaRegistration,
 } from "../../entities/user";
-import { useNavigate } from "react-router";
 
-export const FormRegistration: FC = () => {
+type FormRegistrationProps = {
+  onSubmit?: () => void;
+};
+
+export const FormRegistration: FC<FormRegistrationProps> = ({
+  onSubmit: submit,
+}) => {
   const [isPending, setIsPending] = useState(false);
-  const navigate = useNavigate();
   const [resultRegistration, setResultRegistration] = useState({
     isSuccess: false,
     error: "",
@@ -44,7 +48,7 @@ export const FormRegistration: FC = () => {
     setIsPending(false);
 
     if (result.isSuccess) {
-      navigate("../success");
+      if (submit) submit();
     } else {
       setResultRegistration({ ...result });
     }
@@ -53,7 +57,7 @@ export const FormRegistration: FC = () => {
   return (
     <form
       onSubmit={handleSubmit(onSubmit)}
-      className="w-[20%] min-w-[300px] px-4  py-5 rounded-[18px] shadow-st"
+      className="w-[20%] min-w-[300px] px-4  py-5 rounded-[18px] shadow-st bg-white"
     >
       <div className="text-center text-3xl font-bold">Регистрация</div>
       <div className="mt-4 flex flex-col gap-y-3">

@@ -1,12 +1,10 @@
 import { Route, Routes } from "react-router";
-import { PageSignUp, PageSignUpSuccess } from "../pages";
+import { Layout } from "./layout";
+import { PageAuthConfirm } from "../pages";
 
 export const Router = () => (
   <Routes>
-    <Route path="auth">
-      <Route path="sign-up" element={<PageSignUp />} />
-      <Route path="success" element={<PageSignUpSuccess />} />
-      <Route path="sign-in" element={<div>Sign in</div>} />
-    </Route>
+    <Route path="/" element={<Layout />}></Route>
+    <Route path="auth/confirm" element={<PageAuthConfirm />}></Route>
   </Routes>
 );

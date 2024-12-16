@@ -14,7 +14,9 @@
 }
 
 body {
+  padding: 31px;
   font-family: "Nunito";
+  background-color: #ffbf9b;
 }
 
 #root {
